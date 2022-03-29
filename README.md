@@ -24,7 +24,14 @@ Refer job script here `csvtoparquetcustom`.
 ## Atena Tables
 
 1. landing_csv
- - D
+ - Database: testing_planit
+ - Location of Input dataset: s3://jupitortoys-landing/
+ - Data Format: CSV
+
+2. confirming_parquet
+ - Database: testing_planit
+ - Location of Input dataset: s3://jupitortoys-conforming/ConfirmingFolder/
+ - Data Format: PARQUET
 
 ![image](https://user-images.githubusercontent.com/77515020/160600702-a7d19838-2305-4b15-9e8f-383dfe39c1a4.png)
 
