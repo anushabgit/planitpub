@@ -1,7 +1,7 @@
 # AWS ETL Steps
 
 ## Created S3 Buckets
-Created two buckets for landing and conforming respectively.
+- Created four buckets for: landing, conforming, queryresult and for cloudformation template.
 
 ![image](https://user-images.githubusercontent.com/77515020/160606277-9f0963a5-153d-47a5-bebf-996639f10da2.png)
 
