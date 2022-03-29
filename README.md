@@ -7,7 +7,7 @@
 
 
 ## Created Glue Crawler/Jobs
--This crawler scans S3 and give the locationand detail of data at high level
+- This crawler scans S3 and give the locationand detail of data at high level
 - Click on the folder and click on the actual file (Landing CSV file)
 - On running of the crawlere, it scanned the data and brought over the schema of the dataset, after a minute a table is added with all the details and the tabel is added to catalog.
 
