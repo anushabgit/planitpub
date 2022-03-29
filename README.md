@@ -13,7 +13,10 @@ Created two buckets for landing and conforming respectively.
 ![image](https://user-images.githubusercontent.com/77515020/160603768-16b40d0c-c3bc-40df-9f37-c4c7fb1794af.png)
 
 
-<b>Glue - Database:</b>
+<b>Glue - Database, Tales:</b>
+
+![image](https://user-images.githubusercontent.com/77515020/160604251-34d95b8e-c58f-4079-87d3-1beffb82f00e.png)
+
 
 ![image](https://user-images.githubusercontent.com/77515020/160595473-1f55426f-0ef1-4aa8-a460-bf7bc5f09a83.png)
 
