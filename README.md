@@ -35,6 +35,7 @@ Refer job script here `csvtoparquetcustom`.
 
 ![image](https://user-images.githubusercontent.com/77515020/160600702-a7d19838-2305-4b15-9e8f-383dfe39c1a4.png)
 
+![image](https://user-images.githubusercontent.com/77515020/160602184-c0aa14b2-c4d0-4789-bc22-7d0e86a2b70e.png)
 
 
 
