@@ -21,6 +21,7 @@ Created two buckets for landing and conforming respectively.
 
 
 <b>Glue Job:</b>
+- This Glue job converts CSV dataset into Parquet dataset with like-to-like mapping.
 
 ![image](https://user-images.githubusercontent.com/77515020/160594623-12d3762c-68a3-4603-a2a1-9534414f5765.png)
 
