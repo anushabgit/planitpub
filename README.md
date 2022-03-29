@@ -6,7 +6,12 @@ Created two buckets for landing and conforming respectively.
 ![image](https://user-images.githubusercontent.com/77515020/160594193-f08028de-3cb3-4efb-8409-3a13d75846bc.png)
 
 ## Created Glue Crawler/Jobs
-Created Glue crawler to update the table definition in the data catalog.
+-This crawler scans S3 and give the locationand detail of data at high level
+- Click on the folder and click on the actual file (Landing CSV file)
+- On running of the crawlere, it scanned the data and brought over the schema of the dataset, after a minute a table is added with all the details and the tabel is added to catalog.
+
+![image](https://user-images.githubusercontent.com/77515020/160603768-16b40d0c-c3bc-40df-9f37-c4c7fb1794af.png)
+
 
 <b>Glue - Database:</b>
 
