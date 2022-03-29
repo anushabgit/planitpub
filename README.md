@@ -25,10 +25,12 @@ Refer job script here `csvtoparquetcustom`.
 
 
 
-## Lambda Function
-Lambda function - fx_csvtoparquet_lambda, triggers Glue Job when a new file is loaded to the Landing S3 bucket (jupitortoys-landing).
 
-Refer to lambda code in the repo directory: `tststsetse`
+
+## Lambda Function
+Lambda function - fx_csvtoparquet_lambda triggers Glue Job when a new file is loaded to the Landing S3 bucket (jupitortoys-landing).
+Lambda function - fx_assert compares the record count of Athena tables:  `testing_planit`.`landing_csv`, `testing_planit`.`confirming_parquet`
+Refer to lambda code in the repo directory: `fx_csvtoparquet_lambda` and `fx_assert`.
 
 ![image](https://user-images.githubusercontent.com/77515020/160597971-1de3b1f0-a43d-49f5-a101-c59430bb2927.png)
 
