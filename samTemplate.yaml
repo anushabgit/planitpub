@@ -1,0 +1,184 @@
+Parameters:
+  CFNGuleJobName:
+    Type: String
+    Default: csvtoparquetcustom
+  CFNGlueIAMRoleName:
+    Type: String
+    Default: AWSGlueServiceRole-AdminGlue_landing
+  CFNLambdaIAMRoleName:
+    Type: String
+    Default: 	fx_csvtoparque_lamda-role-f6arqo03
+  CFNGlueScriptLocation:
+    Type: String
+    Default: 's3://aws-glue-assets-875201039577-ap-southeast-2/scripts/'
+Resources:
+  Landing:
+    Type: 'AWS::S3::Bucket'
+    DeletionPolicy: Retain
+    Properties:
+      BucketName: jupitortoys-landing
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: b02497f0-146d-4647-b74b-4022221d486f
+    DependsOn:
+      - csvtoparquet
+  Confirming:
+    Type: 'AWS::S3::Bucket'
+    DeletionPolicy: Retain
+    Properties:
+      BucketName: jupitortoys-conforming
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: a5696663-e398-483e-9813-6ef8d64240f5
+    DependsOn:
+      - assertresult
+  Result:
+    Type: 'AWS::S3::Bucket'
+    DeletionPolicy: Retain
+    Properties:
+      BucketName: landingcsvqueryresult
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: bec3c62b-6e7d-45fe-9c83-b9b35312ba1c
+  CFNGlueJob:
+    Type: 'AWS::Glue::Job'
+    Properties:
+      Role: !Ref CFNGlueIAMRoleName
+      Description: Job created with CloudFormation
+      Command:
+        Name: glueetl
+        ScriptLocation: !Ref CFNGlueScriptLocation
+      AllocatedCapacity: 5
+      ExecutionProperty:
+        MaxConcurrentRuns: 1
+      Name: !Ref CFNGuleJobName
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 054de0d5-fa9d-4950-9ce2-28a47f1980b6
+    DependsOn:
+      - Confirming
+  csvtoparquet:
+    Type: 'AWS::Lambda::Function'
+    Properties:
+      Runtime: python3.8
+      Role: !Ref CFNLambdaIAMRoleName
+      Handler: lambda_functions.lambda_handler
+      CodeUrl: ./fx_csvtoparque_lamda
+      Description: Invoke a function during stack creation.
+      TracingConfig:
+        Mode: Active
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 956ad998-a824-4228-b0ce-cad5a57e0c56
+    DependsOn:
+      - CFNGlueJob
+  assertresult:
+    Type: 'AWS::Lambda::Function'
+    Properties:
+      Runtime: python3.8
+      Role: !Ref CFNLambdaIAMRoleName
+      Handler: lambda_functions.lambda_handler
+      CodeUrl: ./fx_assert
+      Description: Invoke a function during stack creation.
+      TracingConfig:
+        Mode: Active
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 564c682d-08d9-42c4-8e15-120c4a586c9c
+    DependsOn:
+      - Result
+      - CWIR3R4J3
+  CWIR3R4J3:
+    Type: 'AWS::CloudWatch::InsightRule'
+    Properties: {}
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 80f44d34-35a6-41ed-8df9-f4be56571047
+Metadata:
+  'AWS::CloudFormation::Designer':
+    564c682d-08d9-42c4-8e15-120c4a586c9c:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 420
+        'y': 120
+      z: 1
+      embeds: []
+      dependson:
+        - bec3c62b-6e7d-45fe-9c83-b9b35312ba1c
+        - 80f44d34-35a6-41ed-8df9-f4be56571047
+    956ad998-a824-4228-b0ce-cad5a57e0c56:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 0
+        'y': 100
+      z: 1
+      embeds: []
+      dependson:
+        - 054de0d5-fa9d-4950-9ce2-28a47f1980b6
+    bec3c62b-6e7d-45fe-9c83-b9b35312ba1c:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 570
+        'y': 60
+      z: 1
+      embeds: []
+    a5696663-e398-483e-9813-6ef8d64240f5:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 270
+        'y': 120
+      z: 1
+      embeds: []
+      dependson:
+        - 564c682d-08d9-42c4-8e15-120c4a586c9c
+    b02497f0-146d-4647-b74b-4022221d486f:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 140
+        'y': 90
+      z: 1
+      embeds: []
+      dependson:
+        - 956ad998-a824-4228-b0ce-cad5a57e0c56
+    80f44d34-35a6-41ed-8df9-f4be56571047:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 570
+        'y': 150
+      z: 1
+      embeds: []
+    054de0d5-fa9d-4950-9ce2-28a47f1980b6:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 60
+        'y': 210
+      z: 1
+      embeds: []
+      dependson:
+        - a5696663-e398-483e-9813-6ef8d64240f5
+    92f55312-b0e7-4764-9ba7-21c687a97173:
+      source:
+        id: 956ad998-a824-4228-b0ce-cad5a57e0c56
+      target:
+        id: 054de0d5-fa9d-4950-9ce2-28a47f1980b6
+      z: 2
+    9db0077b-0300-4550-a37f-ca599fa970ed:
+      source:
+        id: 054de0d5-fa9d-4950-9ce2-28a47f1980b6
+      target:
+        id: a5696663-e398-483e-9813-6ef8d64240f5
+      z: 3
