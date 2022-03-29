@@ -18,7 +18,7 @@ Created two buckets for landing and conforming respectively.
 ![image](https://user-images.githubusercontent.com/77515020/160604251-34d95b8e-c58f-4079-87d3-1beffb82f00e.png)
 
 
-![image](https://user-images.githubusercontent.com/77515020/160595473-1f55426f-0ef1-4aa8-a460-bf7bc5f09a83.png)
+
 
 <b>Glue Job:</b>
 
@@ -46,7 +46,7 @@ Refer job script here `csvtoparquetcustom`.
 ![image](https://user-images.githubusercontent.com/77515020/160602184-c0aa14b2-c4d0-4789-bc22-7d0e86a2b70e.png)
 
 
-
+![image](https://user-images.githubusercontent.com/77515020/160595473-1f55426f-0ef1-4aa8-a460-bf7bc5f09a83.png)
 
 ## Lambda Function
 Lambda function - fx_csvtoparquet_lambda triggers Glue Job when a new file is loaded to the Landing S3 bucket (jupitortoys-landing).
