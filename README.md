@@ -3,7 +3,8 @@
 ## Created S3 Buckets
 Created two buckets for landing and conforming respectively.
 
-![image](https://user-images.githubusercontent.com/77515020/160594193-f08028de-3cb3-4efb-8409-3a13d75846bc.png)
+![image](https://user-images.githubusercontent.com/77515020/160606277-9f0963a5-153d-47a5-bebf-996639f10da2.png)
+
 
 ## Created Glue Crawler/Jobs
 -This crawler scans S3 and give the locationand detail of data at high level
