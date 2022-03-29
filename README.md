@@ -21,5 +21,23 @@ Created Glue crawler to update the table definition in the data catalog.
 Refer job script here `csvtoparquetcustom`.
 
 
+## Atena Tables
+
+
+
+## Lambda Function
+Lambda function - fx_csvtoparquet_lambda, triggers Glue Job when a new file is loaded to the Landing S3 bucket (jupitortoys-landing).
+
+Refer to lambda code in the repo directory: `tststsetse`
+
+![image](https://user-images.githubusercontent.com/77515020/160597971-1de3b1f0-a43d-49f5-a101-c59430bb2927.png)
+
+
+## Pipeline (in progress - due to some techincal issues)
+
+<img width="640" alt="PastedGraphic-2 6068" src="https://user-images.githubusercontent.com/77515020/160597592-da4b5379-dce9-4a3e-ba1f-1bfabc5ca9e9.png">
+
+
+
 
 
